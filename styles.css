@@ -26,6 +26,16 @@ sup{
   height: 40px;
 }
 
+.barraBusqueda{
+  border-radius: 10px;
+  padding: 5px;
+  width: 200px;
+  height: 20px;
+  float: right;
+  margin-right: 10px;
+  margin-top: 5px;
+}
+
 .container{
   justify-content: space-evenly;
   display:grid;
@@ -71,7 +81,7 @@ sup{
 }
 
 .dark{
-  background-color: #383838;
+  background-color: #202124;
   color: white
 }
 
@@ -84,5 +94,5 @@ sup{
 }
 
 .rojo{
-  background-color: red;
+  background-color:orangered;
 }

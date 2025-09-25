@@ -22,15 +22,14 @@ imprimirMensaje("Hola")
 imprimirMensaje(booleano)
 
 //===Elementos de la pagina como variables===//
-var botonBuscar = document.getElementById("botonBuscar");
-console.log(botonBuscar);
+
 
 //===Eventos===//
-botonBuscar.addEventListener("click", function(){
+/*botonBuscar.addEventListener("click", function(){
     console.log("Hiciste click al botón"); //Imprime mensaje a la consola 
     //alert("Hiciste click al boton") //Alerta arrriba del navegador
     botonBuscar.classList.add("rojo");
-});
+});*/
 
 //===Variables ejercicio===//
 var mas = document.getElementById("mas");
@@ -67,6 +66,8 @@ mas.addEventListener("click", function(){
     document.getElementById("contador").innerHTML = "Likes: " + entero;
 });
 
+
+//===Al hacer click en see all posts, muestra u oculta los posts===//
 verTodos.addEventListener("click", function(){
     if (posts.classList.contains("ocultar")){
         posts.classList.add("mostrar")
@@ -97,9 +98,51 @@ verFotos.addEventListener("mouseout", function(){
 })
 
 //===buscador de articulos===//
+var barraBusqueda = document.getElementById("barraBusqueda");
+var botonBuscar = document.getElementById("botonBuscar");
+console.log(botonBuscar);
+
+//===Al hacer click en el botón de buscar, muestra u oculta el input de buscar===//
 botonBuscar.addEventListener("click", function(){
     console.log("Mostrando input de buscar...")
+    console.log("Hiciste click al botón"); //Imprime mensaje a la consola 
+    //alert("Hiciste click al boton") //Alerta arrriba del navegador
+    
+    if (barraBusqueda.classList.contains("ocultar")){
+        barraBusqueda.classList.remove("ocultar");
+        posts.classList.add("mostrar")
+
+        botonBuscar.classList.add("rojo");
+        barraBusqueda.focus();
+    } else {
+        barraBusqueda.classList.add("ocultar");
+        posts.classList.remove("mostrar")
+
+        botonBuscar.classList.remove("rojo");
+        barraBusqueda.value = "";
+        document.querySelectorAll(".tarjeta").forEach(function(t){
+            t.classList.remove("ocultar");
+        });
+    }
 });
+
+//===Al escribir en la barra de búsqueda, filtra los artículos con clase tarjeta===//
+if (barraBusqueda) {
+    barraBusqueda.addEventListener("input", function(){
+        const textoBusqueda = (barraBusqueda.value || "").trim().toLowerCase();
+
+        // seleccionar todas las tarjetas
+        const articulos = document.querySelectorAll(".tarjeta");
+        articulos.forEach(function(articulo) {
+            const texto = (articulo.textContent || "").toLowerCase();
+            if (textoBusqueda === "" || texto.includes(textoBusqueda)) {
+                articulo.classList.remove("ocultar");
+            } else {
+                articulo.classList.add("ocultar");
+            }
+        });
+    });
+}
 
 //===Modo oscuro===//
 var botonDarkMode = document.getElementById("botonDarkMode");
@@ -116,6 +159,7 @@ botonDarkMode.addEventListener("click", function(){
     if (contenedor.classList.contains("dark")){
         contenedor.classList.remove("dark");
         document.body.classList.remove("dark");
+
         //restaurar los colores originales
         var elementos = contenedor.getElementsByTagName("*");
         for (var i = 0; i < elementos.length; i++) {
@@ -126,6 +170,7 @@ botonDarkMode.addEventListener("click", function(){
     } else {
         contenedor.classList.add("dark");
         document.body.classList.add("dark");
+
         //obtener todos los elementos del container y oscurecerlos
         var elementos = contenedor.getElementsByTagName("*");
         for (var i = 0; i < elementos.length; i++) {
