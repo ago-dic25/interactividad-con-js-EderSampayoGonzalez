@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog and magazine</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+   <header style="font-family: Arial, Helvetica, sans-serif;">
+    <img src="https://th.bing.com/th/id/R.9a23815918b56a30290b9cce5b3a2344?rik=jRigPkWkg4N3Fw&pid=ImgRaw&r=0" width="70" />
+    <a href="URL">Articles <sup>(460)</sup> </a>
+    <a href="URL">Radio <sup>(8)</sup> </a>
+    <a href="URL">Podcast  <sup>(46)</sup> </a>
+    <a href="URL">Be a writer</a>
+    <a href="URL" style="text-decoration: underline">Talk to us</a>
+    <input class="boton" type="button" value="menu" style="float: right; width: 50px;">
+    <button class="boton" id="botonDarkMode" style="float: right;"> <img src="https://cdn-icons-png.freepik.com/512/1518/1518052.png" width="20"> </button>
+    <button class="boton" style="float: right;" id="botonBuscar"> <img alt="lupa" src="https://cdn-icons-png.flaticon.com/512/64/64673.png" width="20"> </button>
+    <input type="text" id="barraBusqueda" class="barraBusqueda ocultar" placeholder="Ingrese la busqueda..." >
+  </header>
+  
+
+  <body>
+    <!-- Contenedor principal -->
+    <div class="container" id="contenedor">
+      <div style="grid-column: 1; grid-row: 1/span 2; text-align: left;">
+        <h1 class="title" style="display:inline-block; font-style: italic;">
+          Best of the week
+        </h1>
+        <a id="verTodos", style="font-size: 50%;  text-decoration: none; color:black"> see all posts → </a>
+      <div class="posts ocultar"  id="posts">
+        <div class="posts tarjeta"> Puerto Vallarta </div>
+        <div class="posts tarjeta"> Venice </div>
+        <div class="posts tarjeta"> Bangkok </div>
+
+      </div>
+      </div>
+
+
+      <div class="tarjeta" style="grid-column: 1;
+        grid-row: 3/span 5;
+        background-image: url('https://images.unsplash.com/photo-1671531009361-8846ff0d7ae4?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+        background-size:contain;">
+
+        <div class="roundbox" style="top: 20px; left:10px; font-weight: bold;">
+          sep 06,2022
+        </div>
+        <div class="roundbox" style=" top: 50px; left:10px; background: transparent; border:2px solid white; color:white;">
+          · Travel
+        </div>
+        <div class = "roundbox"  style="right:10px; top: 15px; margin:8px 0 0; align-content: left; text-align: left;">
+          <span style="font-size: 14px;">· Travel</span>
+          <h1>Get to your dream now <br> destinations with <br> Travel Pro </h1>
+        </div>
+
+      </div>
+
+      <!-- Sección del Broadcaster, añadir contador de likes en + -->
+      <div class="tarjeta" style="grid-column: 2; grid-row: 2/span 3; background-color: rgb(183,212,216);">
+          <div class="roundbox" style=" top: 20px; left:20px; background: transparent; border:2px solid black; color:black;">
+            · ADS
+          </div>
+          <button class="boton" id="mas" type="button" style="padding:0 5px;border: 0px; position: absolute; top: 20px; right:20px; font-size: 20px;"> + </button> <!-- contador de likes -->
+          <div class="contador" id="contador" style="position: absolute; top: 30px; right: 80px; font-size: 20px;"> Likes: 0</div>
+          <div style="font-size: medium; position: relative; top:50%; transform: translateY(-50%); text-align: left; font-family: Arial, Helvetica, sans-serif; padding: 10px;">
+            <p> Become A <br> BROADCAST MEMBER </p>
+            <p style="font-size: 150%;"> Real talk in a corporate world </p>
+          </div>
+          <a href="URL" style="position:relative; bottom: -60px; left: 70px; font-size: 14px; font-family: Arial;"> Learn more </a>
+      </div>
+
+
+      <div class="tarjeta bg5" id="bg5" style="grid-column: 2; grid-row: 5/span 3">
+        <div class="roundbox" id="verFotos" style="position:absolute;bottom: 10%; left: 30%; 
+        padding: 20px 20px; border-radius: 999px; font-weight: bold; cursor: pointer;">
+          See all picks →
+        </div>
+        <div class="imagen ocultar" id="imagenes">
+          <div class="imagen">
+          <img src="https://i.mdel.net/i/db/2022/12/1839401/1839401-800w.jpg">
+        </div>
+      </div>
+    </div>
+
+  </body>
+  <script src="javascript.js"></script>
+</html>
